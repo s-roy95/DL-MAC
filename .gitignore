@@ -1,0 +1,5 @@
+results/*.csv
+data/_scratch/
+__pycache__/
+*.pyc
+.DS_Store

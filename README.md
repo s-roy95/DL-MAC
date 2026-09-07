@@ -1,4 +1,3 @@
-
 # DL-MAC Edge–Cloud FaaS — Deployment & Training
 
 Companion code for *"Maximizing Total Profit and Welfare through Request

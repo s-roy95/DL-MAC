@@ -1,0 +1,16 @@
+# 4-node edge cluster (parity with the DCD deployment): three edge servers and
+# one gateway edge server (direct cloud link), plus a disk-backed shared volume
+# so stages exchange real files. Label pools with pool=es / pool=gw.
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+    labels: {pool: es, es-id: "1"}
+    extraMounts: [{hostPath: /var/lib/dlmac-shared, containerPath: /data}]
+  - role: worker
+    labels: {pool: es, es-id: "2"}
+    extraMounts: [{hostPath: /var/lib/dlmac-shared, containerPath: /data}]
+  - role: worker
+    labels: {pool: gw, es-id: "3"}   # gateway: direct cloud link
+    extraMounts: [{hostPath: /var/lib/dlmac-shared, containerPath: /data}]

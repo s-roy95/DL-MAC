@@ -1,0 +1,8 @@
+# The deployment driver and task-runner use only the Python standard library.
+# The DL-MAC trainer (lmac_dl.py) needs the scientific stack below.
+numpy
+pandas
+networkx
+torch
+matplotlib
+requests
